@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var unirest = require('unirest');
 require('dotenv').load();
 var goodreads = require('goodreads');
 var gr = new goodreads.client({'key': process.env.GOODREADS_DEV_KEY,
