@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+  h1 new account!
+  
+  form(method="post", action="/accounts/", name="newAccountForm", id="newAccountForm", class="newAccountForm")
+    p Username/Email :  
+      input(type="text", name="newUserInput", id="newUserInput", class="newUserInput", placeholder="Please enter your desired username/email", autofocus)
+    p Password:
+      input(type="text", name="newUserPassword1", id="newUserPassword1", class="newUserPassword1", placeholder="Please enter a password at least 6 characters in length")
+    p Password again:
+      input(type="text", name="newUserPassword2", id="newUserPassword2", class="newUserPassword2", placeholder="Please enter the same password as above")
+    br
+    input(type="submit", name="submitNewUser", id="submitNewUser", class="submitNewUser")  
+      
