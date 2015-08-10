@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var goodreads = require('goodreads');
 var gr = new goodreads.client({'key': GOODREADS_DEV_KEY,
-                               'secret': GOODREADS_DEV_SECRET})
+                               'secret': GOODREADS_DEV_SECRET});
 
 //*********** GET READING LIST INDEX PAGE *******************
 router.get('/readingLists/', function(req, res, next) {
