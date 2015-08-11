@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+
+  p new list
+  
+  if(!title)
+    form(method="post", action="/readingLists/newList", name="searchBooksForm", id="searchBooksForm", class="searchBooksForm")
+      p Please Enter Book Title:
+        input(type="text", name="bookTitleSearch", id="bookTitleSearch", class="bookTitleSearch", placeholder="Enter Title", autofocus)
+      p AND/OR
+      p Please Enter An Author:
+        input(type="text", name="bookAuthorSearch", id="bookAuthorSearch", class="bookAuthorSearch", placeholder="Enter Author")
+      br
+      input(type="submit", name="bookSearch", id="bookSearch", class="bookSearch")  
+  else 
+    p= title
+    p.author= response
