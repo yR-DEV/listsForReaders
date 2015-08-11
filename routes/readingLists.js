@@ -16,14 +16,15 @@ router.get('/readingLists/', function(req, res, next) {
 //********* GET NEW READING LIST PAGE ***********************
 router.get('/readingLists/newList', function(req, res, next) {
   unirest.get('https://www.goodreads.com/search/index.xml?key=' + process.env.GOODREADS_DEV_KEY + '&q=Ender%27s+Game')
+  .header('Accept', 'application/json')
   .end(function(response) {
     // console.log(response);
     // var tmp = JSON.parse(response)
     // console.log(response);
-    var raw = response.raw_body;
-    parseString(raw, function(err, obj) {
-      console.log(obj.GoodreadsResponse.search[0].results[0].work);
-    })
+    console.log(response);
+    // parseString(raw, function(err, obj) {
+    //   console.log(obj.GoodreadsResponse.search[0].results[0].work);
+    // })
     res.render('readingLists/newList', {tmp: tmp});
   });
 });
